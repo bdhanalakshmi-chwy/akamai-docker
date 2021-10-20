@@ -63,9 +63,9 @@ guess_tag() {
   # Final list of tags depends on the context:
   # - local build : will default to a value depending on the current branch, see above
   # - travis push, api, pull requestion : same as local build
-  # - travis cron : same as local build, with an extra timestamp tag
+  # - travis cron : same as local build, with an extra timestamp tag (formerly)
   case "$TRAVIS_EVENT_TYPE" in
-    cron) echo ${latest} ${BUILD_TIME_TAG};;
+    cron) echo ${latest};;
     push) echo ${latest};;
     api) echo ${latest};;
     *) echo ${latest};;
